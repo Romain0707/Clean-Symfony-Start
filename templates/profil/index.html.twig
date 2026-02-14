@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Votre profil{% endblock %}
+
+{% block body %}
+    {{ dump(user) }}
+    {{ user.username }}
+    {{ user.email }}
+    {{ user.firstname }}
+    {{ user.lastname }}
+    {{ user.description }}
+
+    <img src="{{ asset('') ~ user.imageName }}" alt="">
+
+{% endblock %}
