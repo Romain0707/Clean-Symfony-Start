@@ -1,3 +1,21 @@
-body {
-    background-color: skyblue;
-}
+// Base
+@use "base/normalize";
+@use "base/reset";
+
+// Abstracts
+@use "abstracts/variables";
+@use "abstracts/mixins";
+@use "abstracts/font-face";
+
+// Pages
+
+
+// Components
+@use "components/alert";
+@use "components/form";
+@use "components/btn";
+
+// Layout
+@use "layout/header";
+// @use "layout/footer";
+// @use "layout/responsive";

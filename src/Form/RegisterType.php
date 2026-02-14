@@ -21,6 +21,10 @@ class RegisterType extends AbstractType
                 'label'=> 'Nom d\'utilisateur :',
                 'required' => true,
             ])
+            ->add('email', EmailType::class, [
+                'label'=> 'Email :',
+                'required' => true,
+            ])
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'invalid_message' => 'Les mots de passe ne correspondent pas.',
@@ -28,14 +32,6 @@ class RegisterType extends AbstractType
                 'required' => true,
                 'first_options'  => ['label' => 'Mot de passe :'],
                 'second_options' => ['label' => 'Répetez le mot de passe :'],
-            ])
-            ->add('email', EmailType::class, [
-                'label'=> 'Email :',
-                'required' => true,
-            ])
-            ->add('firstname', TextType::class, [
-                'label'=> 'Prénom :',
-                'required' => true,  
             ])
             ->add('submit', SubmitType::class, [
                 'label'=> 'S\'enregistrer',
@@ -48,6 +44,7 @@ class RegisterType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => User::class,
+            'attr' => ['class'=>'form-register'],
         ]);
     }
 }
